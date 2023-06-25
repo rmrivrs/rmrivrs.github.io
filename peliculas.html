@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<Link rel="stylesheet" type="text/css" href="footer.css">
+<title>Api Movies</title>
+</head>
+<body>
+<div style="margin:24px;">
+        <nav class="navbar navbar-light" style="background-color: black;">
+        <div class="container">
+        <a class="navbar-brand" href="index.html">Inicio</a>
+        <ul class="nav navbar-nav">
+        <li>
+        <a href="menu.html">Menu</a>
+        </li>
+        <li>
+        <a href="formulario.html">Formulario</a>
+        </li>
+        <li>
+        <a href="resultado.html">Resultado</a>
+        </li>
+        <li>
+        <a href="contacto.html">Contacto</a>
+        </li>
+        <li>
+         <a href="calculadorafi.html">Calculadorafi</a>
+         </li>
+        <li>
+        <a href="apimovie.html">PELICULAS</a>
+        </li>
+        <li>
+        <a href="calculadora.html">CALCULADORA</a>
+        </li>
+        </ul>
+        </div>
+        </nav>
+        </div>
+        <div class="container">
+        <h1>Pagina de peliculas de Ram</h1>
+        <form id="form">
+        <input type="text" id="search" placeholder="busca aqui tu pelicula">
+        <input type="submit" value="search">
+        </form>
+        <section id="main" class="movies"></section>
+        </div>
+        <script>
+        const API_URL='https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1'
+        const IMG_PATH='https://www...'
+        const SEARCH_API='https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query=%22&#39'
+        const main= document.getElementById('main');
+        const form= document.getElementById('form');
+        const search= document.getElementById('search');
+
+        getMovies(API_URL);
+
+        async function getMovies(url){
+        const res = await fetch(url);
+        const data = await res.json();
+        showMovies(data.results);
+        }
+        function showMovies(movies){
+            main.innerHTML=''
+            movies.forEach((movies) => {
+              const {title, poster_path, vote_average, overview, release_date} = movie;
+              const movieEL = document.createElement('div');
+              movieEl.classList.add('movie');
+              movieEL.innerHTML =  <img src="${IMG_PATH + poster_path}" alt ="{title}">
+              <div class = "movie-info">
+                <h3>${title}</h3>
+                <span class = "${getElementByRate(vote_average)}">$ {vote_average}</span>
+                </div>
+                <div class="overview">
+                    <h3>overview</h3>
+                    ${overview}
+                    <h3>release Date</h3>
+                    ${release_date}</div>
+                    
+                    main.appendChild(movieEL);
+
+            })
+        }
+
+        
+        </script>
+         <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h2>CONTACTAME</h2>
+              <p>si estas interesado en contactarme puedes hacerlo atravez de cualquiera de las siguientes redes sociales </p>
+              <div class="contact-links">
+                <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+                <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+</body>
+</html>

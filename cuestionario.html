@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Link rel="stylesheet" type="text/css" href="footer.css">
+        <link rel="stylesheet" type="text/css" href="stile.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcd.bootstrapcdn.con/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <title>CUESTIONARIO</title>
+</head>
+<body>
+    <div style="margin: 24px;">
+        <nav class="navbar navbar-light" style="background-color: #161818;">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">Inicio</a>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="menu.html">Menu</a>
+                    </li>
+                    <li>
+                        <a href="formulario.html">Formulario</a>
+                    </li>
+                    <li>
+                        <a href="apimovie.html">Buscador de peliculas</a>
+                    </li>
+                    <li>
+                        <a href="calculadora.html">Calculadora</a>
+                    </li>
+                    <li>
+                        <a href="calculadora fsica.html">Fisica</a>
+                    </li>
+                    <li>
+                        <a href="cuestionario.html">Cuestionario</a>
+                    </li>
+                    <li>
+                        <a href="perfil.html">perfil</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+        <style>
+            body{
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                margin: 0;
+            }
+            .quiz-container{
+                background-color: aquamarine;
+                border-radius: 10px;
+                box-shadow: 0 0 10px 2px rgb(201, 95, 243);
+                width: 500px;
+                overflow: hidden;
+            }
+            .quiz-header{
+                padding: 4rem;
+            }
+            h2{
+                padding: 1rem;
+                text-align: center;
+                margin: 0;
+            }
+            ul{
+                list-style-type: none;
+                padding: 0;
+            }
+            ul li{
+                font-size: 15px;
+                margin: 15px 0;
+            }
+            ul li{
+                cursor: pointer;
+            }
+            button{
+                background-color: rgb(201, 95, 243);
+                color: azure;
+                border: none;
+                display: block;
+                width: 500px;
+                cursor: pointer;
+                font-size: 15px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                padding: 15px;
+            }
+            button:hover{
+                background-color: gray;
+            }
+            button:focus{
+                outline: none;
+                background-color: gray;
+            }
+
+
+        </style>
+        <div class="container">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="image-container">
+                        <img src="pollo.jpg" alt="imagen" id="question-image" style="width: 250px; height: auto;"> 
+                    </div>
+                    <h2 id="question">comes pollo?</h2>
+                    <ul>
+                        <li>
+                            <input type="radio" id="answer" id="a" class="answer">
+                            <label for="a" id="a_text">No</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="answer" id="b" class="answer">
+                            <label for="b" id="b_text">Si</label>
+                        </li><li>
+                            <input type="radio" id="answer" id="c" class="answer">
+                            <label for="c" id="c_text">Que tipoo de pregunta es esta</label>
+                        </li><li>
+                            <input type="radio" id="answer" id="d" class="answer">
+                            <label for="d" id="d_text">a veces</label>
+                        </li>
+                    </ul>
+                </div>
+                <button id="submit">SIGUIENTE</button>
+            </div>
+        </div>
+        <script>
+            const quizData = [
+                {
+                    question: "QUIEN ES EL MEJOR PERSONAJE DE LOS VENGADORES??",
+                    Image: "quiz1.jpg"
+                    a: "iron man"
+                    b: "capitan america"
+                    c: "thor"
+                    d: "hulk"
+                    correct: "a"
+                },
+                
+            ]
+        </script>
+        <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section about">
+              <h2>CONTACTAME</h2>
+              <p>si estas interesado en contactarme puedes hacerlo atravez de cualquiera de las siguientes redes sociales </p>
+              <div class="contact-links">
+                <a href="http://www.facebook.com/miperfil" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="http://www.instagram.com/miperfil" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="http://www.snapchat.com/miperfil" target="_blank"><i class="fab fa-snapchat"></i></a>
+                <a href="http://www.twitter.com/miperfil" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="http://www.youtube.com/miperfil" target="_blank"><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+  </body>
+</html>
